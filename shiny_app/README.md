@@ -1,5 +1,5 @@
 
-# Processing Fluorcam data for Tcrit and T50 ShinyApp 
+# FluorCam Tcrit and T50 Analysis ShinyApp 
 ### Originally from “FC-Processing.R”
 
 ### Written by Ana Rowley
@@ -9,9 +9,15 @@
 
 This code is base on modified processsing code by Madeline Moran (referring to previous code and work done by Jessice Guo and Maeline Moran). This repository provides a workflow for the Shiny App that makes Madeline Moran's previous script automating detection of Tcrit and T50 more efficient. 
 
-The final output includes an interactive Shiny App where the user can select and upload data files, select a given sample, and input the upper and lower bounds, and max threshold. The Shiny App will display the corresponding plot, including the original raw FC curve, the trimmed curve, the breakpoint regression to calculate Tcrit, and a green square deliniating T50. A reactive table will generate with the following columns:  
+##  What the app does 
+* Upload raw .TXT FluorCam files
+* Clean and trim fluorescence curves
+* Fit segmented regression to estimate Tcrit (critical temperature)
+* Calculate T50 (50% fluorescence loss)
+* Visualize results with interactive plots
+* Export processed results to CSV
 
-#### Output	Table Description
+#### Example Output
 * File	Name of the processed FluorCam file	text
 * Sample ID after relabeling	text
 * Tcrit	Estimated critical temperature	°C
@@ -20,8 +26,24 @@ The final output includes an interactive Shiny App where the user can select and
 * xlow	Lower bound selected by user	°C
 * xhigh	Upper bound selected by user	°C
 * maxthreshold	% of initial fluorescence used to trim noise
+<img width="616" height="291" alt="Screenshot 2026-02-07 at 1 38 42 PM" src="https://github.com/user-attachments/assets/6697b678-69e2-4f29-841c-72436e224ccb" />
 
-The user can press a download button, which generates a CSV file with the results of the interactive table.  
+The user can press a download button, which generates a .CSV file with the results of the interactive table.  
+
+## Tech Stack
+* R
+* Shiny
+* ggplot2
+* segmented regression
+* reactive data workflows
+
+## Skills demonstrated
+* Data cleaning and preprocessing
+* Statistical modeling (breakpoint regression)
+* Interactive dashboard development
+* Automated analysis pipelines
+* Research tool design for non-technical users
+
 ## Repo Contents
 
 * shiny_app/ - 
@@ -92,27 +114,8 @@ I would like to thank Dr. Jessica Guo for her guidance throughout this semester 
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
  
 
-
 # Appendix
 
 - [Access the app](https://anarowley.shinyapps.io/shiny_app/)
 
 - [Access the background](https://docs.google.com/document/d/12kKXWAjVvlxS80Q98abpgT8BywTy19nuaID-Na7OnbA/edit?usp=sharing)
-
-## Background
-
-This code is base on modified processsing code by Madeline Moran (referring to previous code and work done by Jessice Guo and Maeline Moran). This repository provides a workflow for the Shiny App that makes Madeline Moran's previous script automating detection of Tcrit and T50 more efficient. 
-
-The final output includes an interactive Shiny App where the user can select and upload data files, select a given sample, and input the upper and lower bounds, and max threshold. The Shiny App will display the corresponding plot, including the original raw FC curve, the trimmed curve, the breakpoint regression to calculate Tcrit, and a green square deliniating T50. A reactive table will generate with the following columns:  
-
-#### Output	Table Description
-* File	Name of the processed FluorCam file	text
-* Sample ID after relabeling	text
-* Tcrit	Estimated critical temperature	°C
-* SE	Standard error from segmented regression	°C
-* T50	Temperature at which fluorescence is reduced 50%	°C
-* xlow	Lower bound selected by user	°C
-* xhigh	Upper bound selected by user	°C
-* maxthreshold	% of initial fluorescence used to trim noise
-
-The user can press a download button, which generates a CSV file with the results of the interactive table.  
