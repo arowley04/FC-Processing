@@ -26,7 +26,7 @@ This code is base on modified processsing code by Madeline Moran (referring to p
 * xlow	Lower bound selected by user	°C
 * xhigh	Upper bound selected by user	°C
 * maxthreshold	% of initial fluorescence used to trim noise
-<img width="616" height="291" alt="Screenshot 2026-02-07 at 1 38 42 PM" src="https://github.com/user-attachments/assets/6697b678-69e2-4f29-841c-72436e224ccb" />
+<img width="824" height="386" alt="Screenshot 2026-02-07 at 1 44 11 PM" src="https://github.com/user-attachments/assets/6f2f016c-6454-441e-8cbe-44d2b6a09458" />
 
 The user can press a download button, which generates a .CSV file with the results of the interactive table.  
 
